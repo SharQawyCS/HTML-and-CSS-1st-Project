@@ -1,0 +1,430 @@
+/* Start Var */
+:root{
+--main-color: #6096B4;
+--sec-color: #BDCDD6;
+}
+/* End Var */
+
+/* Start Global Rules */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    font-family: "Work Sans", sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small Screens */
+@media (min-width: 768px) {
+    .container{
+        width: 750px;
+    }
+}
+/* Medium Screens */
+@media (min-width: 992px) {
+    .container{
+        width: 970px;
+    }
+}
+/* Large Screens */
+@media (min-width: 1200px) {
+    .container{
+        width: 1170px;
+    }
+}
+/* End Global Rules}*/
+
+/* Start Components */
+.special-heading{
+    color: #ebeced;
+    text-align: center;
+    font-size: 100px;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+}
+
+.special-heading + p {
+    margin: -30px 0 0 ;
+    font-size: 20px;
+    text-align: center;
+    color: #797979;
+}
+
+@media (max-width: 767px){
+.special-heading{
+    font-size: 60px;
+}
+.special-heading + p {
+    margin-top: -20px;
+}
+}
+/* End Components */
+
+
+/* Start Header */
+.header{
+    padding: 20px;
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo{
+    width: 60px;
+}
+.header .links{
+    position: relative;
+}
+
+.header .links:hover .icon span:nth-child(2){
+    width: 100%;
+}
+
+.header .links .icon{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.header .links .icon span{
+    background-color: black;
+    margin-bottom: 5px;
+    height: 2px;
+}
+.header .links .icon span:first-child{
+    width: 100%;
+}
+.header .links .icon span:nth-child(2){
+    width: 70%;
+    transition: .3s;
+}
+.header .links .icon span:last-child{
+    width: 100%;
+}
+.header .links ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #ddd;
+    position: absolute;
+    right: 0;
+    min-width: 200px;
+    top: calc(100% + 15px);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    z-index: 9;
+}
+.header .links ul::before{
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #ccc transparent;
+    position: absolute;
+    right: 5px;
+    top: -20px;
+}
+
+.header .links:hover ul{
+    opacity: 1;
+    visibility: visible;
+}
+
+.header .links ul li a{
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+.header .links ul li a:hover{
+    padding-left: 25px;
+}
+.header .links ul li:not(:last-child) a{
+    border-bottom: 1px solid #ddd;
+}
+/* End Header */
+
+/* Start Landing */
+.landing{
+    background-image: url(../Images/landing.jpg);
+    background-size: cover;
+    height: calc(100vh - 64px);
+    position: relative;
+    margin: auto;
+
+}
+
+.landing .intro-text{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 100%;
+}
+.landing .intro-text h1{
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 50px;
+    font-family: 'Tajawal', sans-serif;;
+    letter-spacing: 5px;
+}
+.landing .intro-text p{
+    font-size: 20px;
+    line-height: 1.8;
+}
+/* End Landing */
+
+/* Start Fetures */
+.featurs{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: white;
+}
+.featurs .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+.featurs .feat{
+    padding: 20px;
+    text-align: center;
+}
+.featurs .feat i{
+    color: var(--main-color);
+    font-size: 30px;
+}
+.featurs .feat h3{
+    font-weight: 800;
+    margin: 30px 0;
+}
+.featurs .feat p{
+    line-height: 1.8;
+    color: #777;
+    font-size: 17px;
+}
+/* End Fetures */
+
+/* Start Services */
+.srv i {
+    margin: 0px 20px 20px 20px;
+    color: var(--main-color);
+}
+.services{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.services .services-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 100px;
+}
+.services .services-content .srv{
+    display: flex;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 767px) {
+    .services .services-content .srv{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .services .srv i{
+    color: var(--main-color);
+    flex-basis: 60px;
+    }
+}    
+
+.services .services-content .srv .text{
+    flex: 1;
+}
+.services .services-content .srv .text p{
+    color: #777;
+    font-weight: 300;
+    line-height: 1.6;
+}
+/* End Services */
+/* Start Portfolio */
+.Portfolio{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: white;
+}
+.Portfolio .Portfolio-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 100px;
+}
+.Portfolio .card{
+    background-color: #ebeced;
+}
+.Portfolio .card img{
+    max-width: 100%
+}
+.Portfolio .card .info{
+    padding: 20px;
+}
+.Portfolio .card .info h3{
+    padding: 0 0 20px 0;
+}
+.Portfolio .card .info p{
+    color: #777;
+    line-height: 1.6;
+}
+/* End potfolio */
+
+/* Start About */
+.about{
+    padding-top: 100px;
+    padding-bottom: 160px;
+}
+
+.about-content{
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+@media (max-width: 991px){
+    .about.about-content{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.about .about-content .image{
+    position: relative;
+    width: 250px;
+    height: 375px;
+}
+.about .about-content .image::before{
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    width: 100px;
+    height: calc(100% + 80px);
+    top: -40px;
+    left: -20px;
+    z-index: -1;
+}
+
+.about .about-content .image:after{
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 300px;
+    border-left: 80px solid var(--sec-color);
+    border-bottom: 80px solid var(--sec-color);
+    z-index: -1;
+    right: -150px;
+}
+@media (max-width: 991px){
+    .about .about-content .image:after,
+    .about .about-content .image::before{
+        display: none;
+    }
+    .about .about-content .image img{
+        margin: -20px auto;
+    }
+
+    .about-content{
+        flex-direction: column;
+    }
+}
+.about .about-content .image img{
+    max-width: 100%;
+}
+.about .about-content .text {
+    flex-basis: calc(100% - 500px);
+}
+.about .about-content .text p:first-of-type{
+font-weight: bold;
+line-height: 2;
+margin-bottom: 60px;
+}
+.about .about-content .text hr{
+    width: 50%;
+    display: inline-block;
+    border-color: var(--main-color);
+}
+.about .about-content .text p:last-of-type{
+    line-height: 2;
+    color: #777;
+}
+
+/* End About */
+
+/* Start Contact */
+.contact{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: white
+}
+.contact .info{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    text-align: center;
+}
+.contact .info .label{
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--sec-color);
+    letter-spacing: -2px;
+}
+.contact .info .link{
+    display: block;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--main-color);
+}
+.contact .info .social{
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 16px;
+    display: flex;
+}
+.contact .info .social i{
+    margin-left: 10px;
+    color: var(--sec-color);
+}
+@media (max-width: 767px) {
+    .contact .info .link{
+        font-size: 20px;
+    }
+}
+
+.footer{
+    background-color: var(--sec-color);
+    color: #797979;
+    text-align: center;
+    font-size: 18px;
+    padding: 30px 10px ;
+}
+.footer span{
+    font-weight: bold;
+    color: var(--main-color);
+}
+.social p{
+    color: #777;
+}
+
+/* End Contact */
